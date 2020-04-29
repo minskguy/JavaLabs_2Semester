@@ -11,7 +11,8 @@ import javax.swing.Timer;
 
 public class Field extends JPanel {
     // Флаг приостановленности движения
-    private boolean paused;
+    private boolean paused = false;
+    private boolean isSmallPause = false;
     // Динамический список скачущих мячей
     private ArrayList<BouncingBall> balls = new ArrayList<BouncingBall>(10);
     // Класс таймер отвечает за регулярную генерацию событий ActionEvent
@@ -50,17 +51,26 @@ public class Field extends JPanel {
 // Включить режим паузы
         paused = true;
     }
-    // Метод синхронизированный, т.е. только один поток может // одновременно быть внутри
+    public synchronized void pauseSmall() {
+// Включить режим паузы
+        isSmallPause = true;
+    }
+
+    // Метод синхронизированный, т.е. только один поток может одновременно быть внутри
     public synchronized void resume() {
 // Выключить режим паузы
         paused = false;
+        isSmallPause = false;
 // Будим все ожидающие продолжения потоки
         notifyAll();
     }
-    // Синхронизированный метод проверки, может ли мяч двигаться // (не включен ли режим паузы?)
+
+    // Синхронизированный метод проверки, может ли мяч двигаться (не включен ли режим паузы?)
     public synchronized void canMove(BouncingBall ball) throws
             InterruptedException {
-        if (paused) {
-// Если режим паузы включен, то поток, зашедший // внутрь данного метода, засыпает
-            wait();
-        } }}
+        if (isSmallPause && !paused) {
+            if (ball.isSmall)
+                wait();
+        }
+        else if (paused) wait();
+    }}

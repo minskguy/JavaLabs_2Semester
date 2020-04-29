@@ -13,6 +13,8 @@ public class BouncingBall implements Runnable {
     private static final int MAX_SPEED = 15;
     private Field field;
     private int radius;
+    public boolean isSmall;
+
     private Color color;
     // Текущие координаты мяча
     private double x;
@@ -29,6 +31,7 @@ public class BouncingBall implements Runnable {
 // Радиус мяча случайного размера
         radius = new Double(Math.random()*(MAX_RADIUS -
                 MIN_RADIUS)).intValue() + MIN_RADIUS;
+        if (radius < 10) isSmall = true;
 // Абсолютное значение скорости зависит от диаметра мяча,
 // чем он больше, тем медленнее
         speed = new Double(Math.round(5*MAX_SPEED / radius)).intValue(); if (speed>MAX_SPEED) {
@@ -55,7 +58,7 @@ public class BouncingBall implements Runnable {
         try {
 // Крутим бесконечный цикл, т.е. пока нас не прервут, мы не намерены завершаться
             while(true) {
-// Синхронизация потоков на самом объекте поля // Если движение разрешено - управление будет // возвращено в метод
+// Синхронизация потоков на самом объекте поля // Если движение разрешено - управление будет возвращено в метод
 // В противном случае - активный поток заснѐт
                 field.canMove(this);
                 if (x + speedX <= radius) {
@@ -89,10 +92,13 @@ public class BouncingBall implements Runnable {
             // и просто выходим (завершаемся)
         } }
     // Метод прорисовки самого себя
-    public void paint(Graphics2D canvas) { canvas.setColor(color);
+    public void paint(Graphics2D canvas) {
+        canvas.setColor(color);
         canvas.setPaint(color);
         Ellipse2D.Double ball = new Ellipse2D.Double(x-radius, y-radius,
                 2*radius, 2*radius);
         canvas.draw(ball);
-        canvas.fill(ball); }}
+        canvas.fill(ball);
+    }
+}
 

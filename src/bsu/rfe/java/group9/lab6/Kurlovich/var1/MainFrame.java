@@ -14,7 +14,9 @@ public class MainFrame extends JFrame {
     // Константы, задающие размер окна приложения, если оно не распахнуто на весь экран
     private static final int WIDTH = 700;
     private static final int HEIGHT = 500;
-    private JMenuItem pauseMenuItem; private JMenuItem resumeMenuItem;
+    private JMenuItem pauseMenuItem;
+    private JMenuItem pauseSmallMenuItem;
+    private JMenuItem resumeMenuItem;
     // Поле, по которому прыгают мячи
     private Field field = new Field();
     // Конструктор главного окна приложения
@@ -31,29 +33,48 @@ public class MainFrame extends JFrame {
         setJMenuBar(menuBar);
         JMenu ballMenu = new JMenu("Мячи");
         Action addBallAction = new AbstractAction("Добавить мяч") {
-            public void actionPerformed(ActionEvent event) { field.addBall();
-                if (!pauseMenuItem.isEnabled() && !resumeMenuItem.isEnabled()) {
+            public void actionPerformed(ActionEvent event) {
+                field.addBall();
+                if (!pauseSmallMenuItem.isEnabled() && !pauseMenuItem.isEnabled() && !resumeMenuItem.isEnabled()) {
 // Ни один из пунктов меню не являются
 // доступными - сделать доступным "Паузу"
                     pauseMenuItem.setEnabled(true);
+                    pauseSmallMenuItem.setEnabled(true);
                 } }
         };
         menuBar.add(ballMenu);
         ballMenu.add(addBallAction);
         JMenu controlMenu = new JMenu("Управление");
         menuBar.add(controlMenu);
+
+        //  pause
         Action pauseAction = new AbstractAction("Приостановить движение"){
             public void actionPerformed(ActionEvent event) {
                 field.pause();
                 pauseMenuItem.setEnabled(false);
+                pauseSmallMenuItem.setEnabled(false);
                 resumeMenuItem.setEnabled(true);
             } };
         pauseMenuItem = controlMenu.add(pauseAction);
         pauseMenuItem.setEnabled(false);
+
+        // pause маленькие мячи
+        Action pauseSmallAction = new AbstractAction("Приостановить движение мячей малого радиуса"){
+            public void actionPerformed(ActionEvent event) {
+                field.pauseSmall();
+                pauseSmallMenuItem.setEnabled(false);
+                resumeMenuItem.setEnabled(true);
+            } };
+        pauseSmallMenuItem = controlMenu.add(pauseSmallAction);
+        pauseMenuItem.setEnabled(false);
+        pauseSmallMenuItem.setEnabled(false);
+
+        // resume
         Action resumeAction = new AbstractAction("Возобновить движение") {
             public void actionPerformed(ActionEvent event) {
                 field.resume();
                 pauseMenuItem.setEnabled(true);
+                pauseSmallMenuItem.setEnabled(true);
                 resumeMenuItem.setEnabled(false);
             } };
         resumeMenuItem = controlMenu.add(resumeAction);
