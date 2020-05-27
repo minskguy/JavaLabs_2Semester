@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6dff7de-d06e-4a6e-8ae7-9804d6f0c122" name="Default Changelist" comment="feat: lab7 added">
-      <change afterPath="$PROJECT_DIR$/out/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/.idea/out.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Labs_Semester2/META-INF/Labs_Semester2.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Labs_Semester2/bsu/rfe/java/group9/lab7/Kurlovich/var2/MainFrame$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Labs_Semester2/bsu/rfe/java/group9/lab7/Kurlovich/var2/MainFrame$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Labs_Semester2/bsu/rfe/java/group9/lab7/Kurlovich/var2/MainFrame$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Labs_Semester2/bsu/rfe/java/group9/lab7/Kurlovich/var2/MainFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Labs_Semester2/bsu/rfe/java/group9/lab7/Kurlovich/var2/ValidateIP.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bsu/rfe/java/group9/lab7/Kurlovich/var2/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bsu/rfe/java/group9/lab7/Kurlovich/var2/ValidateIP.java" afterDir="false" />
+    <list default="true" id="a6dff7de-d06e-4a6e-8ae7-9804d6f0c122" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs_Semester2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Labs_Semester2.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +43,16 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -92,8 +107,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588025781421</updated>
+      <workItem from="1589327424759" duration="281000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: lab7 added">
+      <created>1588948359541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588948359541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
